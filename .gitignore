@@ -1,0 +1,6 @@
+/.idea/
+*.idea
+*.iml
+
+/src/main/webapp/config/
+config.properties
