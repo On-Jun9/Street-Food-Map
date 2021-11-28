@@ -29,5 +29,10 @@ public class HomeController {
 		
 		return "home";
 	}
+
+	@RequestMapping("/home")
+	public String board(Model model){
+		return "home";
+	}
 	
 }
