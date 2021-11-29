@@ -9,4 +9,5 @@ import java.util.List;
 public interface BoardMapper {
     public List<BoardVO> listView();
     public int insertBoard(BoardVO vo);
+    public BoardVO contentView(BoardVO vo);
 }

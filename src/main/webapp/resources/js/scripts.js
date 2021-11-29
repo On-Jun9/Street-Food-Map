@@ -7,18 +7,14 @@
 // Scripts
 // 
 
-$(function(){
+
+function orderModal(order_id){
     $('#orderModal').modal({
         keyboard: true,
-        backdrop: "static",
-        show:false,
-
-    }).on('show', function(){
-        var getIdFromRow = $(event.target).closest('tr').data('id');
-        //make your ajax call populate items or what even you need
-        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
+        backdrop: "static"
     });
-});
+};
+
 
 window.addEventListener('DOMContentLoaded', event => {
 

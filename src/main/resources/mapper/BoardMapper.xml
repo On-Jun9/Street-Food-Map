@@ -6,6 +6,12 @@
         SELECT b_no,b_title,b_content,b_writer,b_views,TO_CHAR(b_date,'YYYY-mm-dd hh24:mi') as b_dateformat
                from sfm_board ORDER BY b_no desc
     </select>
+
+    <select id="contentView" resultType="com.sfm.model.BoardVO">
+        SELECT b_no,b_title,b_content,b_writer,b_views,TO_CHAR(b_date,'YYYY-mm-dd hh24:mi') as b_dateformat
+        from sfm_board
+        where #{b_no}
+    </select>
     
     <insert id="insertBoard" parameterType="com.sfm.model.BoardVO">
 <!--        <selectKey keyProperty="seq" order="BEFORE" resultType="int">-->

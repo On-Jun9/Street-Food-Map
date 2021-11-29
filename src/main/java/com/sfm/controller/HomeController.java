@@ -26,8 +26,12 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		model.addAttribute("list", boardService.listView());
-		
 		return "home";
+	}
+	@RequestMapping(method = RequestMethod.POST,value = "contentView")
+	public String contentView(BoardVO vo){
+		boardService.contentView(vo);
+		return null;
 	}
 	@RequestMapping(method = RequestMethod.POST,value = "write")
 	public String write(BoardVO vo){

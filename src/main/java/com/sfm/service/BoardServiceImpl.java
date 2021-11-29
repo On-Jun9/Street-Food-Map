@@ -22,4 +22,9 @@ public class BoardServiceImpl implements BoardService{
         return mapper.insertBoard(vo);
     }
 
+    @Override
+    public BoardVO contentView(BoardVO vo) {
+        return mapper.contentView(vo);
+    }
+
 }
