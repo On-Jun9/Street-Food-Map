@@ -5,16 +5,26 @@
 */
 //
 // Scripts
-// 
-
-
-function orderModal(order_id){
-    $('#orderModal').modal({
-        keyboard: true,
-        backdrop: "static"
-    });
-};
-
+//
+var contentModal = document.getElementById('contentModal');
+contentModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget;
+    // Extract info from data-bs-* attributes
+    var content = button.getAttribute('data-bs-content');
+    var title = button.getAttribute('data-bs-title');
+    var date = button.getAttribute('data-bs-date');
+    // If necessary, you could initiate an AJAX request here
+    // and then do the updating in a callback.
+    //
+    // Update the modal's content.
+    var modalTitle = contentModal.querySelector('.modal-title');
+    var modalBodyInput = contentModal.querySelector('.modal-body');
+    var modalFooter = contentModal.querySelector('.modal-footer-date')
+    modalTitle.textContent = title;
+    modalBodyInput.textContent = content;
+    modalFooter.textContent = date;
+});
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -41,3 +51,4 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+

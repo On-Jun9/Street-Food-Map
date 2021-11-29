@@ -15,6 +15,8 @@
     <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
+<!--Modal include-->
+<jsp:include page="board/boardModal.jsp"/>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #ec944c">
     <div class="container px-4">
@@ -25,6 +27,7 @@
                 <li class="nav-item"><a class="nav-link" href="#about">지도</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">게시판</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
             </ul>
         </div>
     </div>
