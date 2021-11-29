@@ -2,6 +2,7 @@ package com.sfm.service;
 
 import com.sfm.mapper.BoardMapper;
 import com.sfm.model.BoardVO;
+import com.sfm.utils.PagingVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,16 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public boolean deleteBoard(int b_no) {
         return mapper.deleteBoard(b_no);
+    }
+
+    @Override
+    public int countBoard() {
+        return mapper.countBoard();
+    }
+
+    @Override
+    public List<BoardVO> selectBoard(PagingVO vo) {
+        return mapper.selectBoard(vo);
     }
 
 }
