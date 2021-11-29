@@ -26,7 +26,7 @@
         </td>
     </tr>
     <c:forEach items="${list}" var="vo">
-        <tr data-bs-toggle="modal" data-bs-target="#contentModal" data-bs-title="${vo.b_title}" data-bs-content="${vo.b_content}" data-bs-date="${vo.b_dateformat}">
+        <tr data-bs-toggle="modal" data-bs-target="#contentModal" data-bs-no="${vo.b_no}" data-bs-title="${vo.b_title}" data-bs-content="${vo.b_content}" data-bs-date="${vo.b_dateformat}">
             <td style="min-width:50px; width: 7%;">
                 <c:out value="${vo.b_no}"/>
             </td>

@@ -22,4 +22,14 @@ public class BoardServiceImpl implements BoardService{
         return mapper.insertBoard(vo);
     }
 
+    @Override
+    public boolean updateBoard(BoardVO vo) {
+        return mapper.updateBoard(vo);
+    }
+
+    @Override
+    public boolean deleteBoard(int b_no) {
+        return mapper.deleteBoard(b_no);
+    }
+
 }

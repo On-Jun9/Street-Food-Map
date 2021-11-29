@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -32,6 +33,18 @@ public class HomeController {
 	@RequestMapping(method = RequestMethod.POST,value = "write")
 	public String write(BoardVO vo){
 		boardService.insertBoard(vo);
+		return "redirect:/#services";
+	}
+
+	@RequestMapping(method = RequestMethod.POST,value = "modify")
+	public String modify(BoardVO vo){
+		boardService.updateBoard(vo);
+		return "redirect:/#services";
+	}
+
+	@RequestMapping(method = RequestMethod.POST,value = "delete")
+	public String delete(@RequestParam("b_no")int b_no){
+		boardService.deleteBoard(b_no);
 		return "redirect:/#services";
 	}
 

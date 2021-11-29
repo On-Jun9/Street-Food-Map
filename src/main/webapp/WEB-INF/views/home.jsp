@@ -15,8 +15,7 @@
     <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
-<!--Modal include-->
-<jsp:include page="board/boardModal.jsp"/>
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #ec944c">
     <div class="container px-4">
@@ -71,6 +70,9 @@
         </div>
     </div>
 </section>
+<!--Modal include-->
+<jsp:include page="board/boardModal.jsp"/>
+
 <!-- Contact section-->
 <section id="contact">
     <div class="container px-4">
