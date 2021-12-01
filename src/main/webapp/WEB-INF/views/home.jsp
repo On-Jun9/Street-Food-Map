@@ -26,7 +26,6 @@
                 <li class="nav-item"><a class="nav-link" href="#about">지도</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">게시판</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
             </ul>
         </div>
     </div>
@@ -36,7 +35,7 @@
     <div class="container px-4 text-center">
         <h1 class="fw-bolder">Street Food Map</h1>
         <p class="lead">길거리 음식 지도 사이트</p>
-        <a class="btn btn-lg btn-light" href="#about">지도보기</a>
+        <a class="btn btn-lg btn-light" href="/login">로그인/회원가입</a>
     </div>
 </header>
 <!-- Map section-->

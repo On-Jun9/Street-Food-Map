@@ -55,8 +55,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-target="#modifyModal" data-bs-toggle="modal" data-bs-dismiss="modal">수정</button>
-                <button type="button" class="btn btn-primary" data-bs-target="#deleteModal" data-bs-toggle="modal" data-bs-dismiss="modal">삭제</button>
+                <button type="button" class="btn btn-dark" data-bs-target="#modifyModal" data-bs-toggle="modal" data-bs-dismiss="modal" style="background-color: #e2a44f">수정</button>
+                <button type="button" class="btn btn-danger" data-bs-target="#deleteModal" data-bs-toggle="modal" data-bs-dismiss="modal">삭제</button>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contentModal" data-bs-dismiss="modal">취소</button>
-                <button type="submit" class="btn btn-primary" form="modify" style="background-color: #e2a44f">수정</button>
+                <button type="submit" class="btn btn-dark" form="modify" style="background-color: #e2a44f">수정</button>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contentModal" data-bs-dismiss="modal">취소</button>
-                <button type="submit" class="btn btn-primary" form="delete" style="background-color:#f0654f ">삭제</button>
+                <button type="submit" class="btn btn-danger" form="delete">삭제</button>
             </div>
         </div>
     </div>

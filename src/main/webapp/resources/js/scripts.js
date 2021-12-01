@@ -6,6 +6,7 @@
 //
 // Scripts
 //
+
 var contentModal = document.getElementById('contentModal');
 var modifyModal = document.getElementById('modifyModal');
 var deleteModal = document.getElementById('deleteModal');

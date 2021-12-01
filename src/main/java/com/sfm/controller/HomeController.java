@@ -62,6 +62,10 @@ public class HomeController {
 		boardService.deleteBoard(b_no);
 		return "redirect:/#services";
 	}
+	@RequestMapping("login")
+	public String login(){
+		return "/member/loginPage";
+	}
 
 //	@RequestMapping(method = RequestMethod.GET,value = "boardList")
 //	public String boardList(PagingVO vo, Model model
