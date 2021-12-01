@@ -25,6 +25,7 @@
 		<property value="classpath:/mapper/BoardMapper.xml" name="mapperLocations"/>
 	</bean>
 
+
 	<mybatis-spring:scan base-package="com.sfm.mapper"/>
 
 </beans>

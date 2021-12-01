@@ -39,4 +39,17 @@
              )
         WHERE RN BETWEEN #{start} AND #{end}
     </select>
+
+
+    <select id="userLogin" parameterType="com.sfm.model.MemberVO" resultType="com.sfm.model.MemberVO">
+        SELECT u_email,u_password,u_name
+        FROM SFM_MEMBER
+        WHERE U_EMAIL = #{u_email}
+          AND U_PASSWORD = #{u_password}
+    </select>
+
+    <insert id="signUpUser" parameterType="com.sfm.model.MemberVO">
+        INSERT INTO SFM_MEMBER(u_no,u_email,u_name,u_password)
+        VALUES(SFM_MEMBER_SEQ.nextval,#{u_email},#{u_name},#{u_password})
+    </insert>
 </mapper>

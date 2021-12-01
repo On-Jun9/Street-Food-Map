@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%--<%@ page session="false" %>--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,27 +21,34 @@
 <h2>로그인 / 회원가입</h2>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form method="post" action="/signUp" id="signUpForm">
             <h1>회원 가입</h1>
+
 <%--            <div class="social-container">--%>
 <%--                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>--%>
 <%--                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>--%>
 <%--                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>--%>
 <%--            </div>--%>
             <span>이메일을 통해 회원가입</span>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>회원가입</button>
+            <input type="text" name="u_name" placeholder="Name" />
+            <input type="email" name="u_email" placeholder="Email" />
+            <input type="password" name="u_password" placeholder="Password" />
+            <button type="submit">회원가입</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form method="post" action="/login" id="login">
             <h1>로그인</h1>
             <span>이메일을 통해 로그인</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>로그인</button>
+            <c:if test="${msg == false}">
+                <span>로그인 실패!</span>
+            </c:if>
+            <c:if test="${member != null}">
+                <span> ${member.u_name}님 로그인중 </span>
+            </c:if>
+            <input type="email" name="u_email" placeholder="Email" />
+            <input type="password" name="u_password" placeholder="Password" />
+            <button type="submit">로그인</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -58,6 +65,8 @@
             </div>
         </div>
     </div>
+
+
 </div>
 
 <footer>
