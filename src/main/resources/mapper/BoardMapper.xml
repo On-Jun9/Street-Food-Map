@@ -2,5 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="com.sfm.mapper.BoardMapper">
 
+    <select id="listView" resultType="com.sfm.model.BoardVO">
+        SELECT b_no,b_title,b_content,b_writer,b_views,TO_CHAR(b_date,'YYYY-mm-dd hh24:mi') as b_dateformat
+               from sfm_board ORDER BY b_no desc
+    </select>
+    
+    <insert id="insertBoard" parameterType="com.sfm.model.BoardVO">
+        INSERT INTO sfm_board (b_no,b_title,b_content,b_writer,b_views,b_date)
+        VALUES (sfm_board_seq.NEXTVAL, #{b_title}, #{b_content}, '임시 작성자',0,sysdate)
+    </insert>
 
+    <update id="updateBoard" parameterType="com.sfm.model.BoardVO">
+        UPDATE sfm_board Set b_title = #{b_title}, b_content = #{b_content}, b_modified = '1'
+        WHERE b_no = #{b_no}
+    </update>
+
+    <delete id="deleteBoard" parameterType="int">
+        DELETE FROM sfm_board WHERE b_no = #{b_no}
+    </delete>
+
+    <!-- 총 게시글 갯수 출력 -->
+    <select id="countBoard" resultType="int">
+        SELECT COUNT(*) FROM sfm_board
+    </select>
+
+    <!-- 페이징 처리 후 게시글 조회 -->
+    <select id="selectBoard" resultType="com.sfm.model.BoardVO">
+        SELECT *
+        FROM (
+                 SELECT ROWNUM RN, A.*
+                 FROM (
+                          SELECT b_no,b_title,b_content,b_writer,b_views,TO_CHAR(b_date,'YYYY-mm-dd hh24:mi') as b_dateformat
+                          FROM sfm_board
+                          ORDER BY b_no DESC
+                      ) A
+             )
+        WHERE RN BETWEEN #{start} AND #{end}
+    </select>
 </mapper>

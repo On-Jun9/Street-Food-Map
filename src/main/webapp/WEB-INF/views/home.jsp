@@ -15,16 +15,18 @@
     <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #ec944c">
     <div class="container px-4">
-        <a class="navbar-brand" href="#page-top" style="color: #f2cd84">Street Food Map</a>
+        <a class="navbar-brand" href="/#page-top" style="color: #f2cd84">Street Food Map</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">지도</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">게시판</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
             </ul>
         </div>
     </div>
@@ -37,7 +39,7 @@
         <a class="btn btn-lg btn-light" href="#about">지도보기</a>
     </div>
 </header>
-<!-- About section-->
+<!-- Map section-->
 <section id="about">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
@@ -54,17 +56,23 @@
         </div>
     </div>
 </section>
-<!-- Services section-->
+<!-- Board section-->
 <section class="bg-light" id="services">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
-                <h2>Services we offer</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                <h2 data-toggle="modal" data-id="1" data-target="#orderModal">길거리 전단지</h2>
+                <p class="lead">자유 게시판</p>
+                <jsp:include page="board/boardList.jsp"/>
+
+
             </div>
         </div>
     </div>
 </section>
+<!--Modal include-->
+<jsp:include page="board/boardModal.jsp"/>
+
 <!-- Contact section-->
 <section id="contact">
     <div class="container px-4">
