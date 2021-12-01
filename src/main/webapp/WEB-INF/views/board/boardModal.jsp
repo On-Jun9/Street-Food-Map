@@ -51,6 +51,7 @@
                     에러
                 </div>
             </div>
+
             <div class="modal-footer-date" id="contentModalFooter">
 
             </div>
@@ -58,6 +59,23 @@
                 <button type="button" class="btn btn-secondary" data-bs-target="#modifyModal" data-bs-toggle="modal" data-bs-dismiss="modal">수정</button>
                 <button type="button" class="btn btn-primary" data-bs-target="#deleteModal" data-bs-toggle="modal" data-bs-dismiss="modal">삭제</button>
             </div>
+            <div class="modal-body" id="commentModalBody" style="background-color: #fafafb">
+                <div class="modal-title">
+                    댓글[]
+                </div>
+            </div>
+            <div class="modal-body">
+                댓글들<br><br><br><br><br><br>
+                <div class="mb-3">
+<%--                    <label for="recipient-name1" class="col-form-label">제목</label>--%>
+
+                    <div class="modal-footer">
+                        <textarea class="form-control" id="commentText" name="b_content"></textarea>
+                        <input type="submit" class="btn btn-primary" value="댓글 작성">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
