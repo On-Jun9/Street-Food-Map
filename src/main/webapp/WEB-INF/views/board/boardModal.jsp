@@ -42,11 +42,27 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="writeModalLoginLabel">로그인 필요</h5>
+                <h5 class="modal-title" id="writeModalLoginLabel">오류</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 로그인이 필요한 기능입니다!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="writeModalOther" tabindex="-1" aria-labelledby="writeModalOtherLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="writeModalOtherLabel">오류</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                수정, 삭제는 작성자만 가능합니다!
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">확인</button>
@@ -73,8 +89,7 @@
 
             </div>
             <div class="modal-footer" id="contentModalFooter2">
-                <button type="button" class="btn btn-dark" data-bs-target="#modifyModal" data-bs-toggle="modal" data-bs-dismiss="modal" style="background-color: #e2a44f">수정</button>
-                <button type="button" class="btn btn-danger" data-bs-target="#deleteModal" data-bs-toggle="modal" data-bs-dismiss="modal">삭제</button>
+
             </div>
         </div>
     </div>

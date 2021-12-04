@@ -25,7 +25,7 @@
         </td>
     </tr>
     <c:forEach items="${viewAll}" var="vo">
-        <tr data-bs-toggle="modal" data-bs-target="#contentModal" <c:if test="${member != null}">data-bs-username="${member.u_name}" </c:if>  data-bs-writer="${vo.b_writer}" data-bs-no="${vo.b_no}" data-bs-title="${vo.b_title}" data-bs-content="${vo.b_content}" data-bs-date="${vo.b_dateformat}">
+        <tr data-bs-toggle="modal" data-bs-target="#contentModal" data-bs-username="${member.u_name}" data-bs-writer="${vo.b_writer}" data-bs-no="${vo.b_no}" data-bs-title="${vo.b_title}" data-bs-content="${vo.b_content}" data-bs-date="${vo.b_dateformat}">
             <td style="min-width:50px; width: 7%;">
                 <c:out value="${vo.b_no}"/>
             </td>

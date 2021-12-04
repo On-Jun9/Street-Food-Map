@@ -52,7 +52,12 @@ contentModal.addEventListener('show.bs.modal', function (event) {
     modalBodyInput.innerHTML = content;
     modalFooter.innerHTML = date;
     if (writer != n_loginname){
-        modalFooter2.innerHTML = "";
+        modalFooter2.innerHTML = "<button type=\"button\" class=\"btn btn-dark\" data-bs-target=\"#writeModalOther\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\" style=\"background-color: #e2a44f\">수정</button>\n" +
+            "                <button type=\"button\" class=\"btn btn-danger\" data-bs-target=\"#writeModalOther\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\">삭제</button>";;
+    }
+    else{
+        modalFooter2.innerHTML = "<button type=\"button\" class=\"btn btn-dark\" data-bs-target=\"#modifyModal\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\" style=\"background-color: #e2a44f\">수정</button>\n" +
+            "                <button type=\"button\" class=\"btn btn-danger\" data-bs-target=\"#deleteModal\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\">삭제</button>";
     }
 
 
