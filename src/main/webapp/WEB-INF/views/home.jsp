@@ -15,6 +15,9 @@
     <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
+<c:if test="${member != null}">
+    <% String loginId = "${member != null}";%>
+</c:if>
 
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background-color: #ec944c">
@@ -23,6 +26,9 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
+                <c:if test="${member != null}">
+                    <li class="nav-item"><a class="nav-link">${member.u_name} 님</a></li>
+                </c:if>
                 <li class="nav-item"><a class="nav-link" href="#about">지도</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">게시판</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -35,7 +41,12 @@
     <div class="container px-4 text-center">
         <h1 class="fw-bolder">Street Food Map</h1>
         <p class="lead">길거리 음식 지도 사이트</p>
+        <c:if test="${member != null}">
+        <a class="btn btn-lg btn-light" href="/logout" ata-toggle="modal" data-target="#logoutSuccess">로그아웃</a>
+        </c:if >
+        <c:if test="${member == null}">
         <a class="btn btn-lg btn-light" href="/loginPage">로그인/회원가입</a>
+        </c:if >
     </div>
 </header>
 <!-- Map section-->
@@ -46,9 +57,7 @@
                 <h2>About this page</h2>
                 <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
                 <ul>
-                    <c:if test="${member != null}">
-                        <li> ${member.u_name}님 로그인중 </li>
-                    </c:if>
+
                     <li>
 
                             ${member.u_name}님 로그인중

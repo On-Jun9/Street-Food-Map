@@ -82,6 +82,7 @@ public class HomeController {
 		String path="";
 		HttpSession session = req.getSession();
 		MemberVO result = memberService.userLogin(vo);
+		model.addAttribute("loginUserInfo",result);
 		logger.info("login~",result);
 		if (result == null){
 			session.setAttribute("member",null);
@@ -98,7 +99,19 @@ public class HomeController {
 
 	@RequestMapping(method = RequestMethod.POST,value = "/signUp")
 	public String signUp(MemberVO vo){
-		memberService.signUpUser(vo);
+		try {
+			memberService.signUpUser(vo);
+			return "redirect:/";
+		}catch (Exception e){
+			return "redirect:/loginPage";
+		}
+	}
+
+	@RequestMapping(value = "/logout")
+	public String logOut(MemberVO vo, HttpServletRequest req){
+		HttpSession session = req.getSession();
+		session.invalidate();
+		logger.info("logout success");
 		return "redirect:/";
 	}
 

@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!-- 글작성 Modal -->
@@ -27,11 +26,30 @@
                         <label for="message-text1" class="col-form-label">내용</label>
                         <textarea class="form-control" id="message-text1" name="b_content"></textarea>
                     </div>
+                    <input type="hidden" name="b_writer" value="${member.u_name}"></form>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
                 <button type="submit" class="btn btn-primary" form="write">작성</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 글작성 Modal -->
+<div class="modal fade" id="writeModalLogin" tabindex="-1" aria-labelledby="writeModalLoginLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="writeModalLoginLabel">로그인 필요</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                로그인이 필요한 기능입니다!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">확인</button>
             </div>
         </div>
     </div>
@@ -54,7 +72,7 @@
             <div class="modal-footer-date" id="contentModalFooter">
 
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id="contentModalFooter2">
                 <button type="button" class="btn btn-dark" data-bs-target="#modifyModal" data-bs-toggle="modal" data-bs-dismiss="modal" style="background-color: #e2a44f">수정</button>
                 <button type="button" class="btn btn-danger" data-bs-target="#deleteModal" data-bs-toggle="modal" data-bs-dismiss="modal">삭제</button>
             </div>

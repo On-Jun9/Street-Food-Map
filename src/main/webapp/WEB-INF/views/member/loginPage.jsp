@@ -41,10 +41,7 @@
             <h1>로그인</h1>
             <span>이메일을 통해 로그인</span>
             <c:if test="${msg == false}">
-                <span>로그인 실패!</span>
-            </c:if>
-            <c:if test="${member != null}">
-                <span> ${member.u_name}님 로그인중 </span>
+                <span><br>로그인 실패!<br>아이디 또는 비밀번호를 확인해 주세요</span>
             </c:if>
             <input type="email" name="u_email" placeholder="Email" />
             <input type="password" name="u_password" placeholder="Password" />
