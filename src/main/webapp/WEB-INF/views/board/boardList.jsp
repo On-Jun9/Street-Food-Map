@@ -7,7 +7,6 @@
 --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <table class="table table-striped table-hover">
@@ -26,7 +25,7 @@
         </td>
     </tr>
     <c:forEach items="${viewAll}" var="vo">
-        <tr data-bs-toggle="modal" data-bs-target="#contentModal" data-bs-no="${vo.b_no}" data-bs-title="${vo.b_title}" data-bs-content="${vo.b_content}" data-bs-date="${vo.b_dateformat}">
+        <tr data-bs-toggle="modal" data-bs-target="#contentModal" data-bs-username="${member.u_name}" data-bs-writer="${vo.b_writer}" data-bs-no="${vo.b_no}" data-bs-title="${vo.b_title}" data-bs-content="${vo.b_content}" data-bs-date="${vo.b_dateformat}">
             <td style="min-width:50px; width: 7%;">
                 <c:out value="${vo.b_no}"/>
             </td>
@@ -76,6 +75,13 @@
 
 
 <!-- Write Button trigger modal -->
-<button type="button" class="btn btn-dark btn-sm m-0" data-bs-toggle="modal" data-bs-target="#writeModal">글쓰기</button>
+<c:if test="${member != null}">
+    <button type="button" class="btn btn-dark btn-sm m-0" data-bs-toggle="modal" data-bs-target="#writeModal">글쓰기</button>
+</c:if>
+
+<c:if test="${member == null}">
+    <button type="button" class="btn btn-dark btn-sm m-0" data-bs-toggle="modal" data-bs-target="#writeModalLogin">글쓰기</button>
+</c:if>
+
 
 

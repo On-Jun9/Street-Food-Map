@@ -6,6 +6,7 @@
 //
 // Scripts
 //
+
 var contentModal = document.getElementById('contentModal');
 var modifyModal = document.getElementById('modifyModal');
 var deleteModal = document.getElementById('deleteModal');
@@ -14,6 +15,8 @@ var no;
 var content;
 var title;
 var date;
+var writer;
+var loginname;
 contentModal.addEventListener('show.bs.modal', function (event) {
     // Button that triggered the modal
     var button = event.relatedTarget;
@@ -24,6 +27,8 @@ contentModal.addEventListener('show.bs.modal', function (event) {
     var n_title = button.getAttribute('data-bs-title');
     var n_date = button.getAttribute('data-bs-date');
     var n_no = button.getAttribute('data-bs-no');
+    var n_writer = button.getAttribute('data-bs-writer');
+    var n_loginname = button.getAttribute('data-bs-username');
 
 
 
@@ -32,6 +37,8 @@ contentModal.addEventListener('show.bs.modal', function (event) {
         title = n_title;
         date = n_date;
         no = n_no;
+        writer = n_writer;
+        loginname = n_loginname;
     }
     // If necessary, you could initiate an AJAX request here
     // and then do the updating in a callback.
@@ -40,9 +47,20 @@ contentModal.addEventListener('show.bs.modal', function (event) {
     var modalTitle = document.getElementById('contentModalLabel');
     var modalBodyInput = document.getElementById('contentModalBody');
     var modalFooter = document.getElementById('contentModalFooter');
+    var modalFooter2 = document.getElementById('contentModalFooter2');
     modalTitle.innerHTML = title;
     modalBodyInput.innerHTML = content;
     modalFooter.innerHTML = date;
+    if (writer != n_loginname){
+        modalFooter2.innerHTML = "<button type=\"button\" class=\"btn btn-dark\" data-bs-target=\"#writeModalOther\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\" style=\"background-color: #e2a44f\">수정</button>\n" +
+            "                <button type=\"button\" class=\"btn btn-danger\" data-bs-target=\"#writeModalOther\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\">삭제</button>";;
+    }
+    else{
+        modalFooter2.innerHTML = "<button type=\"button\" class=\"btn btn-dark\" data-bs-target=\"#modifyModal\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\" style=\"background-color: #e2a44f\">수정</button>\n" +
+            "                <button type=\"button\" class=\"btn btn-danger\" data-bs-target=\"#deleteModal\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\">삭제</button>";
+    }
+
+
 });
 
 modifyModal.addEventListener('show.bs.modal', function (event) {
