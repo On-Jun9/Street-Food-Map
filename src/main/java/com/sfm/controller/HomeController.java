@@ -98,12 +98,17 @@ public class HomeController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST,value = "/signUp")
-	public String signUp(MemberVO vo){
+	public String signUp(MemberVO vo,RedirectAttributes rttr){
 		try {
+			String path ="";
 			memberService.signUpUser(vo);
-			return "redirect:/";
+
+			rttr.addFlashAttribute("result",true);
+
+			return "redirect:loginPage";
 		}catch (Exception e){
-			return "redirect:/loginPage";
+			rttr.addFlashAttribute("result",false);
+			return "redirect:loginPage";
 		}
 	}
 

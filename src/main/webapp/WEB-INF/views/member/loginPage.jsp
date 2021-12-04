@@ -30,6 +30,9 @@
 <%--                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>--%>
 <%--            </div>--%>
             <span>이메일을 통해 회원가입</span>
+            <c:if test="${result == false}">
+                <span><br>회원가입 실패!<br>아이디 또는 이메일을 변경후 시도해 주세요</span>
+            </c:if>
             <input type="text" name="u_name" placeholder="Name" />
             <input type="email" name="u_email" placeholder="Email" />
             <input type="password" name="u_password" placeholder="Password" />
@@ -42,6 +45,9 @@
             <span>이메일을 통해 로그인</span>
             <c:if test="${msg == false}">
                 <span><br>로그인 실패!<br>아이디 또는 비밀번호를 확인해 주세요</span>
+            </c:if>
+            <c:if test="${result == true}">
+                <span><br>회원가입 성공! <br></span>
             </c:if>
             <input type="email" name="u_email" placeholder="Email" />
             <input type="password" name="u_password" placeholder="Password" />
