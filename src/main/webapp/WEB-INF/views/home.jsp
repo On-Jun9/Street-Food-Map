@@ -31,7 +31,7 @@
                 </c:if>
                 <li class="nav-item"><a class="nav-link" href="#about">지도</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">게시판</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">정보</a></li>
             </ul>
         </div>
     </div>
@@ -54,19 +54,8 @@
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
-                <h2>About this page</h2>
-                <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
-                <ul>
-
-                    <li>
-
-                            ${member.u_name}님 로그인중
-
-                    </li>
-                    <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                    <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                    <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-                </ul>
+                <div><h2>병원 지도</h2></div>
+                <div class="map_ma" id="map_ma"></div>
             </div>
         </div>
     </div>
@@ -93,8 +82,23 @@
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
-                <h2>Contact us</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+                <h2>정보</h2>
+                <p class="lead">코로나 현황</p>
+
+
+
+                <p class="lead">응급 처치 요령</p>
+                <ul>
+                    <li>
+                        <a href="https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/contents/prevent/SDIJK14433.html?cd1=33&cd2=99&pagecd=SDIJK144.33&menuSeq=128" class="btn btn-outline-secondary" role ="button" aria-disabled="true">국민재난 안전 포털</a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://www.e-gen.or.kr/egen/emergency_treat.do" class="btn btn-outline-secondary" role ="button" aria-disabled="true">응급 의료 포털</a>
+                    </li>
+                </ul>
+
+                <p class="lead"></p>
             </div>
         </div>
     </div>
@@ -106,6 +110,10 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=" ></script>
 <script src="resources/js/scripts.js"></script>
+<script src="resources/js/mapScripts.js"></script>
+
 </body>
 </html>
